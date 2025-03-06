@@ -36,22 +36,18 @@ If you want to use this project follow these steps:
 1. Clone the repository  
 2. Set up virtual environment using requirements.txt
 3. Download the data from [OpenNeuro ds002748, version 1.0.5](https://openneuro.org/datasets/ds002748/versions/1.0.5) and place into data/ 
-4. Run preprocessing  
+4. Run main.py 
     ```bash
-    python preprocess.py
+    python main.py
     ```
-5. Train the model
-    ```bash
-    python train.py
-    ```
-6. Evaluate the model
-    ```bash
-    python evaluate.py
-    ```
+5. Evaluation plots are saved to /figures
 
 ---
-First results seem promising but there is room for improvement which is currently being worked on
+### To-DO
+First results seem promising but a lot of work needs to done on preprocessing and model optimization.
+SVC is not fully implemented  yet.
 
+---
 ### References
 
 Bezmaternykh DD and Melnikov ME and Savelov AA and Petrovskii ED (2021). Resting state with closed eyes for patients with depression and healthy participants. OpenNeuro. [Dataset] [doi: 10.18112/openneuro.ds002748.v1.0.5](https://onlinelibrary.wiley.com/doi/10.
