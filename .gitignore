@@ -173,6 +173,7 @@ cython_debug/
 
 # Data folder
 data/
+nilearn_cache/
 
 # Mac storage stuff
 .DS_Store
