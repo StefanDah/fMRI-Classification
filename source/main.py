@@ -23,7 +23,7 @@ data_path = os.path.join(project_root, 'data')
 (subjects,subject_labels, data_path) = load_data(data_path)
 
 # Perform preprocessing steps: co-registration, resampling to MIN space and smoothing
-# preprocessing(subjects, data_path)
+preprocessing(subjects, data_path)
 
 # Compute ROI time series
 data = compute_roi_time_series(subjects, data_path)
@@ -67,22 +67,6 @@ history = train_model(
     weight_decay=1e-4,
     scheduler_type="ReduceLROnPlateau",  # Optional: Use "StepLR" or "None"
 )
-
-# fig, ax = plt.subplots(1, 2, figsize=(10, 5))
-# ax[0].plot(history['train_losses'])
-# ax[0].plot(history['test_losses'])
-# ax[0].legend(["train", "test"])
-# ax[1].plot(history['train_aucs'])
-# ax[1].plot(history['test_aucs'])
-# ax[1].legend(["train", "test"])
-
-# ax[0].set_title("Loss")
-# ax[1].set_title("AUC")
-# ax[0].set_xlabel("Epoch")
-# ax[1].set_xlabel("Epoch")
-
-plt.show()
-
 
 ### SVC model
 # comes here

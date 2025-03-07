@@ -10,7 +10,16 @@ from nilearn.connectome import ConnectivityMeasure
 
 # %%
 def compute_roi_time_series(subjects, data_path):
+    """
+    Compute ROI-based time series for each subject.
 
+    Parameters:
+    subjects (list): List of subject IDs.
+    data_path (str): Path to the directory containing subject data.
+
+    Returns:
+    np.ndarray: Array containing ROI-based time series for each subject.
+    """
     #Create functional connectivity matrix
     #Extract ROI-based Time-Series
     atlas = datasets.fetch_atlas_schaefer_2018(n_rois=200, yeo_networks=7, resolution_mm=2)
@@ -36,7 +45,16 @@ def compute_roi_time_series(subjects, data_path):
 
 # %%
 def compute_correlation_matrix(X_roi, subjects):
+    """
+    Compute the correlation matrix for each subject's ROI-based time series.
 
+    Parameters:
+    X_roi (np.ndarray): Array containing ROI-based time series for each subject.
+    subjects (list): List of subject IDs.
+
+    Returns:
+    np.ndarray: Array containing the flattened correlation matrices for each subject.
+    """
     X_correlation = []
     # Compute Functional Connectivity Matrix
     for subject in range(len(subjects)):

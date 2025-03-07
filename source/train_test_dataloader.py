@@ -4,7 +4,22 @@ from torch.utils.data import TensorDataset, DataLoader, Subset
 
 
 def create_train_test_dataloader(data, labels, test_size=0.2, batch_size=8):
+    
+    """
+    Create train and test dataloaders from the given data and labels.
 
+    Parameters:
+    data (array-like): The input data.
+    labels (array-like): The labels corresponding to the data.
+    test_size (float, optional): The proportion of the dataset to include in the test split. Default is 0.2.
+    batch_size (int, optional): The number of samples per batch to load. Default is 8.
+
+    Returns:
+    DataLoader:
+        - train_dataloader (DataLoader): DataLoader for the training data.
+        - test_dataloader (DataLoader): DataLoader for the test data.
+    """
+    
     train_data, test_data, train_labels, test_labels = train_test_split(
         data, labels,
         test_size=test_size,

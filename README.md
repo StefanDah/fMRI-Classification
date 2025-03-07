@@ -38,7 +38,7 @@ If you want to use this project follow these steps:
 3. Download the data from [OpenNeuro ds002748, version 1.0.5](https://openneuro.org/datasets/ds002748/versions/1.0.5) and place into data/ 
 4. Run main.py 
     ```bash
-    python main.py
+    python source/main.py
     ```
 5. Evaluation plots are saved to /figures
 

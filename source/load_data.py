@@ -5,8 +5,19 @@ import nibabel as nib
 from nilearn import image, datasets
 
 # %%
-def load_data(data_path):
-    
+def load_data(data_path):   
+    """
+    Load subject data and labels.
+
+    Parameters:
+    data_path (str): Path to the directory containing subject data.
+
+    Returns:
+    tuple: A tuple containing:
+        - subjects (list): List of subject IDs.
+        - subject_labels (dict): Dictionary mapping subject IDs to binary group labels.
+        - data_path (str): Path to the directory containing subject data.
+    """
     # Load subject labels from a TSV file (format: subject_id\tgroup)
     labels_df = pd.read_csv("data/participants.tsv", sep="\t")  
     labels_df['group_binary'] = labels_df['group'].map({'depr': 1, 'control': 0})
@@ -18,8 +29,19 @@ def load_data(data_path):
 
     return(subjects,subject_labels, data_path)
 
+
 # %%
-def preprocessing(subjects, data_path):
+def preprocessing(subjects, data_path):    
+    """
+    Preprocess fMRI data for each subject.
+
+    Parameters:
+    subjects (list): List of subject IDs.
+    data_path (str): Path to the directory containing subject data.
+
+    Returns:
+    None
+    """
     # Load the standard MNI152 template (2mm resolution)
     mni_template = datasets.load_mni152_template(resolution=2)
 
