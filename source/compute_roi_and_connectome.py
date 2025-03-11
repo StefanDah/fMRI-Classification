@@ -39,9 +39,9 @@ def compute_roi_time_series(subjects, data_path):
         
         
     print(f"Number of unique subjects: {len(set(subjects))}")
-    
+    X_roi_list = X_roi
     X_roi = np.array(X_roi)
-    return X_roi
+    return X_roi, X_roi_list
 
 # %%
 def compute_correlation_matrix(X_roi, subjects):
