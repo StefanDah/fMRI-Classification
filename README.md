@@ -6,6 +6,7 @@ Two different ML  algorithms are used:
 - meanMLP (multi-layer perceptron based on https://github.com/neuroneural/meanMLP)  
 
 meanMLP was developed by [Popov et al. (2024)](https://www.sciencedirect.com/science/article/pii/S1053811924004063#b19) specifically for fMRI time-series classification.
+They also describe several preprocessing steps which i also applied (e.g. resampling to MNI space).
 
 
 ### Data source
@@ -27,7 +28,7 @@ The dataset used for this project is publicly available on OpenNeuro:
 - meanMLP is trained directly on the ROI time series
 
 ### Evaluation 
-- Model performance is evaluated using ROC AUC
+- Model performance is evaluated using amongst others, confusion matrix for SVC and ROC-AUC for meanMLP
 
 ---
 
@@ -44,9 +45,7 @@ If you want to use this project follow these steps:
 
 ---
 ### To-DO
-First results seem promising but a lot of work needs to done on preprocessing and model optimization.
-SVC is not fully implemented  yet.
-
+First results seem promising (for SVC) but a lot of work needs to done on preprocessing and model optimization (meanMLP).
 ---
 ### References
 
